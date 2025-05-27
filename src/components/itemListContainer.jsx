@@ -1,4 +1,4 @@
-function ItemListContainer ({ msj }){
+function ListContainer ({ msj }){
     return (
         <div style={{height: '100vh',
             backgroundColor: '#d7d8d8'       }}>
@@ -9,4 +9,4 @@ function ItemListContainer ({ msj }){
     )
 }
 
-export default ItemListContainer
+export default ListContainer

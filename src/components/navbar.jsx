@@ -1,4 +1,4 @@
-import { CartWidget } from "./CartWidget";
+import { CartWidget } from "./cartWidget";
 
 export function Navbar() {
 
@@ -24,7 +24,7 @@ export function Navbar() {
                     margin: '0px 20px'
                     }}>
                         <a style={{
-                        color: 'white'}} href="#">
+                        color: 'white'}} href="">
                             Naruto
                         </a>
                     </li>
@@ -32,7 +32,7 @@ export function Navbar() {
                     margin: '0px 20px'
                     }}>
                         <a style={{
-                        color: 'white'}} href="#">
+                        color: 'white'}} href="">
                             Dragon Ball
                         </a>
                     </li>
@@ -40,7 +40,7 @@ export function Navbar() {
                     margin: '0px 20px'
                     }}>
                         <a style={{
-                        color: 'white'}} href="#">
+                        color: 'white'}} href="">
                             Pokemon
                         </a>
                     </li>
@@ -48,7 +48,7 @@ export function Navbar() {
                     margin: '0px 20px'
                     }}>
                         <a style={{
-                        color: 'white'}} href="#">
+                        color: 'white'}} href="">
                             Yu-gi-oh!
                         </a>
                     </li>
