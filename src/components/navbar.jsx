@@ -1,3 +1,4 @@
+import { NavLink, Link } from "react-router";
 import { CartWidget } from "./cartWidget";
 import { useState, useEffect } from "react";
 
@@ -14,23 +15,40 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav>
-      <div>
-        <h1>Geek Store</h1>
-      </div>
-      <div style={{ display: "flex", width: "100%", justifyContent: "center" }}>
-        <div style={{ display: "flex" }}>
-          <ul style={{ listStyle: "none", display: "flex" }}>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
+        {/* Título / Logo */}
+        <Link to="/" className="text-white text-decoration-none">
+          <h1>Geek Store</h1>
+        </Link>
+
+        {/* Botón hamburguesa */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCategories"
+          aria-controls="navbarCategories"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarCategories">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             {category.map((cat, index) => (
-              <li key={index} style={{ margin: "0px 20px" }}>
-                <a style={{ color: "white" }} href="">
+              <li className="nav-item" key={index}>
+                <NavLink
+                  to={`/category/${cat}`}
+                  className="nav-link text-capitalize"
+                >
                   {cat}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
-          <div>
-            <CartWidget></CartWidget>
+          <div className="d-flex">
+            <CartWidget />
           </div>
         </div>
       </div>

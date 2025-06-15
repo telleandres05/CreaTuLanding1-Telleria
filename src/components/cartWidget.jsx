@@ -1,5 +1,5 @@
 export function CartWidget() {
-    const contador = 4
+    const contador = '4'
 
     return (
         <p>
