@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 export function ItemList({ items }) {
   return (
     <div className="container mt-4">
@@ -15,12 +16,10 @@ export function ItemList({ items }) {
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{art.name}</h5>
                 <p className="card-text text-muted">{art.description}</p>
-                <p className="card-text fw-bold">${art.price}</p>
-
                 <div className="mt-auto">
-                  <button className="btn btn-primary w-100">
-                    Más Información
-                  </button>
+                  <Link to={`/item/${art.id}`} className="btn btn-primary mt-2">
+                    Ver más
+                  </Link>
                 </div>
               </div>
             </div>
