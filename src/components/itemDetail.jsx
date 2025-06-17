@@ -1,3 +1,5 @@
+import { ItemCount } from "./itemCount";
+
 export function ItemDetail({ itemDet }) {
   return (
     <div className="container mt-4">
@@ -9,6 +11,7 @@ export function ItemDetail({ itemDet }) {
       <p>
         <strong>Precio:</strong> ${itemDet.price}
       </p>
+      <ItemCount />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import { ItemDetail } from "./itemDetail";
+import { ItemDetail } from "./itemDetail"
 
 function ItemDetailContainer() {
   const { id } = useParams();
@@ -16,13 +16,7 @@ function ItemDetailContainer() {
   if (!item) return <p>Cargando producto...</p>
 
   return (
-    // <div className="container mt-4">
-    //   <h2>{item.name}</h2>
-    //   <img src={item.imagen} alt={item.name} style={{ width: "300px" }} />
-    //   <p><strong>Descripción:</strong> {item.description}</p>
-    //   <p><strong>Precio:</strong> ${item.price}</p>
-    // </div>
-    <ItemDetail itemDet={item} />
+        <ItemDetail itemDet={item} />
   )
 }
 

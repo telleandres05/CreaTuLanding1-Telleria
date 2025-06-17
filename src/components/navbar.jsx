@@ -1,6 +1,6 @@
-import { NavLink, Link } from "react-router";
-import { CartWidget } from "./cartWidget";
-import { useState, useEffect } from "react";
+import { NavLink, Link } from "react-router"
+import { CartWidget } from "./cartWidget"
+import { useState, useEffect } from "react"
 
 export function Navbar() {
   const [category, setCategory] = useState([]);
@@ -9,20 +9,17 @@ export function Navbar() {
     fetch("https://683f842e5b39a8039a54d43e.mockapi.io/api/geek-store/products")
       .then((res) => res.json())
       .then((cat) => {
-        const catArray = [...new Set(cat.map((producto) => producto.category))];
-        setCategory(catArray);
-      });
-  }, []);
+        const catArray = [...new Set(cat.map((producto) => producto.category))]
+        setCategory(catArray)
+      })
+  }, [])
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
-        {/* Título / Logo */}
-        <Link to="/" className="text-white text-decoration-none">
+        <Link to="/" className="text-dark text-decoration-none">
           <h1>Geek Store</h1>
         </Link>
-
-        {/* Botón hamburguesa */}
         <button
           className="navbar-toggler"
           type="button"
@@ -40,7 +37,7 @@ export function Navbar() {
               <li className="nav-item" key={index}>
                 <NavLink
                   to={`/category/${cat}`}
-                  className="nav-link text-capitalize"
+                  className="nav-link text-capitalize text-dark"
                 >
                   {cat}
                 </NavLink>
@@ -53,5 +50,5 @@ export function Navbar() {
         </div>
       </div>
     </nav>
-  );
+  )
 }
