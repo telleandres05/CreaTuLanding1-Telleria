@@ -1,4 +1,4 @@
-import { ItemCount } from "./itemCount";
+import { ItemCount } from "./itemCount"
 
 export function ItemDetail({ itemDet }) {
   return (

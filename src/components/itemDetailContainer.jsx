@@ -16,7 +16,7 @@ function ItemDetailContainer() {
   if (!item) return <p>Cargando producto...</p>
 
   return (
-        <ItemDetail itemDet={item} />
+    <ItemDetail itemDet={item} />
   )
 }
 

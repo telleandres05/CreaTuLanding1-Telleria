@@ -3,7 +3,7 @@ import { CartWidget } from "./cartWidget"
 import { useState, useEffect } from "react"
 
 export function Navbar() {
-  const [category, setCategory] = useState([]);
+  const [category, setCategory] = useState([])
 
   useEffect(() => {
     fetch("https://683f842e5b39a8039a54d43e.mockapi.io/api/geek-store/products")
