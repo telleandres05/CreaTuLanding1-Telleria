@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router"
-import { CartWidget } from "./cartWidget"
+import CartWidget from "./cartWidget"
 import { useState, useEffect } from "react"
 
 export function Navbar() {

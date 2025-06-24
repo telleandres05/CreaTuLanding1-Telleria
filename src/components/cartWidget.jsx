@@ -1,10 +1,11 @@
-export function CartWidget() {
-    const contador = '4'
+import { CartContext } from "../context/cartContext";
+import { useContext } from "react";
+
+export default function CartWidget() {
+    const { cartCounter } = useContext(CartContext)
 
     return (
-        <p>
-            🛒 <span> {contador} </span>
-        </p>
+        <button className="btn btn-primary mt-2"> 🛒  {cartCounter.length} </button>
     );
     
 }
