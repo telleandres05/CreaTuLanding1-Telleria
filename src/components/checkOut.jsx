@@ -1,18 +1,40 @@
+import { serverTimestamp } from "firebase/firestore"
+import { useCart } from "../context/useCart"
+import { clientOrder } from "../firebase/gdb"
+
+
 export function CheckOut() {
+
+    const { cartCounter } = useCart()
     const handelSubmit = e =>{
         e.preventDefault()
+    
+        const form = e.target
+    const name = form.name.value
+    const email = form.email.value
+    const phone = form.phone.value
+
+    clientOrder({
+        name,
+        email,
+        phone,
+        items: cartCounter,
+        time: serverTimestamp()
+    })
     }
+
+    
+
     
   return (
     <div className="d-flex justify-content-center">
       <form className="p-4 border rounded bg-light w-50" onSubmit={handelSubmit} noValidate>
         <div className="mb-3">
-          <label htmlFor="nombre" className="form-label">Nombre</label>
+          <label className="form-label">Nombre</label>
           <input
             type="text"
             className="form-control"
-            id="nombre"
-            name="nombre"
+            id="name"
             placeholder="Jhon Doe"
             required
           />
@@ -22,7 +44,7 @@ export function CheckOut() {
         </div>
 
         <div className="mb-3">
-          <label htmlFor="email" className="form-label">Correo electrónico</label>
+          <label className="form-label">Correo electrónico</label>
           <input
             type="email"
             className="form-control"
@@ -37,12 +59,11 @@ export function CheckOut() {
         </div>
 
         <div className="mb-3">
-          <label htmlFor="telefono" className="form-label">Teléfono</label>
+          <label className="form-label">Teléfono</label>
           <input
             type="tel"
             className="form-control"
-            id="telefono"
-            name="telefono"
+            id="phone"
             placeholder="+123456789"
             pattern="[0-9]+"
             required
