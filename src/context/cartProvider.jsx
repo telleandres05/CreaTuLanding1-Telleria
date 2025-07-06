@@ -28,9 +28,13 @@ export function CartProv ({ children }) {
   setCartCounter(cartCounter.filter(item => item.id !== id))
 }
 
+const clearCart = () => {
+    setCartCounter([])
+  }
+
 
   return (
-    <CartContext.Provider value={{ cartCounter, addCart, amountItem, removeFromCart }}>
+    <CartContext.Provider value={{ cartCounter, addCart, amountItem, removeFromCart, clearCart }}>
       {children}
     </CartContext.Provider>
   )
