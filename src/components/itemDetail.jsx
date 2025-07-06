@@ -11,7 +11,7 @@ export function ItemDetail({ itemDet }) {
       <p>
         <strong>Precio:</strong> ${itemDet.price}
       </p>
-      <ItemCount />
+      <ItemCount item={itemDet} />
     </div>
   );
 }
