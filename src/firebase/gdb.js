@@ -40,3 +40,20 @@ export const clientOrder = async (orden) => {
 
 await addDoc(collection(db, "orders"), orden)
 }
+
+
+export const getAllCategories = async () => {
+  const col = collection(db, "item")
+  const querySnapshot = await getDocs(col)
+
+  const categorias = new Set()
+
+  querySnapshot.forEach((doc) => {
+    const data = doc.data()
+    if (data.category) {
+      categorias.add(data.category)
+    }
+  })
+
+  return [...categorias]
+}

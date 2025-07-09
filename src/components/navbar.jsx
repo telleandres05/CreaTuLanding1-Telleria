@@ -1,18 +1,19 @@
 import { NavLink, Link } from "react-router"
 import CartWidget from "./cartWidget"
 import { useState, useEffect } from "react"
+import { getAllCategories } from "../firebase/gdb"
+
 
 export function Navbar() {
   const [category, setCategory] = useState([])
 
-  useEffect(() => {
-    fetch("https://683f842e5b39a8039a54d43e.mockapi.io/api/geek-store/products")
-      .then((res) => res.json())
-      .then((cat) => {
-        const catArray = [...new Set(cat.map((producto) => producto.category))]
-        setCategory(catArray)
-      })
-  }, [])
+
+useEffect(() => {
+  getAllCategories().then((catArray) => {
+    setCategory(catArray)
+  })
+}, [])
+
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">

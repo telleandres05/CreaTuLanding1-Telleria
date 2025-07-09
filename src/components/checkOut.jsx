@@ -46,29 +46,28 @@ export function CheckOut() {
     }
   }
 
-  // Componente interno reutilizable
   const Field = ({ label, name, type, placeholder, pattern }) => (
-    <div className="mb-3">
-      <label className="form-label" htmlFor={name}>{label}</label>
+    <div>
+      <label htmlFor={name} className="form-label">{label}</label>
       <input
         type={type}
-        className="form-control"
         id={name}
         name={name}
         placeholder={placeholder}
         pattern={pattern}
         required
+        className="form-control"
       />
     </div>
   )
 
   return (
-    <div className="d-flex justify-content-center">
-      <form className="p-4 border rounded bg-light w-50" onSubmit={handelSubmit} noValidate>
+    <div className="checkout-container">
+      <form className="checkout-form" onSubmit={handelSubmit} noValidate>
         <Field label="Nombre" name="name" type="text" placeholder="Jhon Doe" />
         <Field label="Correo electrónico" name="email" type="email" placeholder="jhondoe@email.com" />
         <Field label="Teléfono" name="phone" type="tel" placeholder="+123456789" pattern="[0-9]+" />
-        <button type="submit" className="btn btn-primary w-100">Enviar</button>
+        <button type="submit" className="btn btn-primary btn-submit">Enviar</button>
       </form>
     </div>
   )
