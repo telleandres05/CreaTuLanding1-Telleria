@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useCart } from "../context/useCart"
+import Swal from 'sweetalert2'
+
 
 export function ItemCount({ item }) {
   const [counter, setCounter] = useState(1)
@@ -10,10 +12,23 @@ export function ItemCount({ item }) {
     if (counter > 1) setCounter(counter - 1)
   }
 
-  const hCart = () => {
-    addCart({ ...item, count: counter })
-    setCounter(1)
-  }
+const hCart = () => {
+  addCart({ ...item, count: counter })
+  setCounter(1)
+
+  Swal.fire({
+    title: 'Producto Agregado',
+    text: `Agregaste ${item.name} al carrito`,
+    icon: 'success',
+    confirmButtonText: 'OK',
+    timer: 2000,
+    timerProgressBar: true,
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false
+  })
+}
+
 
   return (
     <div>
